@@ -38,7 +38,7 @@ while attempt <= max_attempt:
             for row in best_score_record:
                 if attempt < int(row[0]):
                     best_score = attempt
-                    with open("best_scores.csv", "w", newline="") as scores:
+                    with open("best_scores.csv", "a", newline="") as scores:
                         write = csv.writer(scores)
                         write.writerow(str(attempt))
                         scores.close()
