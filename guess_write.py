@@ -24,7 +24,6 @@ with open("best_scores.csv", "r") as file:
     for row in reader:
         if best_score > int(row[0]):
             best_score = int(row[0])
-    file.close()
 print(f"Dosadašnji najbolji rezultat iznosi pogodak iz {best_score} pokušaja")
 
 while attempt <= max_attempt:
@@ -41,8 +40,6 @@ while attempt <= max_attempt:
                     with open("best_scores.csv", "a", newline="") as scores:
                         write = csv.writer(scores)
                         write.writerow(str(attempt))
-                        scores.close()
-            file.close()
         if attempt == max_attempt:
             print(poruka4)
         break
